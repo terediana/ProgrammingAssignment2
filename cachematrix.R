@@ -13,7 +13,7 @@
 makeCacheMatrix <- function(x = matrix()) {
   
   
-  inversa <<- NULL 
+  inversa <- NULL 
   
   set <- function(y) { ## function to set the value of matrix and
     x <<- y            ## to initialize the inverse with NULL.  
@@ -22,8 +22,8 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   
   get <- function() x ## función to get the  matrix.
-  
-  setinv <- function(inV) inversa <- inV  ## function to set the the inverse matrix.
+
+  setinv <- function(inV) inversa <<- inV  ## function to set the the inverse matrix.
   
   getinv <- function() inversa ## function to get the the inverse matrix.
   
@@ -59,5 +59,6 @@ cacheSolve <- function(x, ...) {
   x$setinv(inversa) ## set the value using the object function setinv
   
   inversa ## take it.
+ 
   
 }
